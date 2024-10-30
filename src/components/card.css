@@ -1,0 +1,12 @@
+.card {
+    max-width: fit-content !important;
+    height: 550px;
+    padding: 0  !important;
+    margin-bottom: 9em;
+    font-size: 15px;
+}
+
+.card-img-top {
+    max-height: 160px;
+    height: 160px;
+}
