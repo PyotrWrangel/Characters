@@ -1,0 +1,38 @@
+[
+    {
+    "id": 0,
+    "image": "src/assets/image/maurizio-card.jpg",
+    "name": "Maurizio Costanzo",
+    "description": "giornalista, conduttore televisivo, conduttore radiofonico, accademico, scrittore, sceneggiatore e paroliere italiano. Volto tra i più noti della televisione italiana[1] è considerato un vero innovatore in tale contesto come iniziatore del genere del talk show."
+    },
+    {
+    "id": 1,
+    "image": "src/assets/image/Greggio-card.jpg",
+    "name": "Ezio Greggio",
+    "description": "Ezio Greggio (Cossato, 7 aprile 1954) è un conduttore televisivo, comico, cabarettista e attore italiano.  Ha condotto fin dalla prima edizione il telegiornale satirico Striscia la notizia, di cui è il volto più rappresentativo insieme ad Enzo Iacchetti. Risiede nel principato di Monaco."
+},
+{
+    "id": 2,
+    "image": "src/assets/image/Iacchetti-card.jpg",
+    "name": "Enzino Iacchetti",
+    "description": "Enzo Iacchetti,  è un comico, cabarettista, conduttore televisivo, cantante e attore italiano."
+},
+{
+    "id": 3,
+    "image": "src/assets/image/Bonolis-card.jpg",
+    "name": "Paolo Bonolis",
+    "description":"Paolo Bonolis (Roma, 14 giugno 1961) è un conduttore televisivo, showman e autore televisivo italiano, Tra i più noti presentatori della televisione italiana."
+},
+{
+    "id": 4,
+    "image": "src/assets/image/Bongiorno-card.jpg",
+    "name": "Mike Bongiorno",
+    "description": "Michael Nicholas Salvatore Bongiorno, detto Mike, è stato un conduttore televisivo e conduttore radiofonico italiano con cittadinanza statunitense, considerato tra coloro che fondarono la televisione in Italia. "
+},
+{
+    "id": 5,
+    "image": "src/assets/image/Scotti-card.jpg",
+    "name": "Jerry Scotti",
+    "description": "Gerry Scotti, pseudonimo di Virginio Scotti è un conduttore televisivo, conduttore radiofonico, attore ed ex politico italiano. È considerato uno dei volti più noti di Mediaset, insieme a Paolo Bonolis e Maria De Filippi; soprannominato 'Zio Gerry', è stato scherzosamente definito 'lo zio più famoso d'Italia'."
+}
+]
