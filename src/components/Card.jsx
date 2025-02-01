@@ -1,30 +1,17 @@
-import './card.css'
-import PropTypes from 'prop-types';
-
-function Card({ person }) {
-    if (!person) return null; 
+// eslint-disable-next-line react/prop-types
+function Card({ name, place, ruleOf, imageUrl, onRemoveCharacter }) {
   return (
-    <div className="card text-justify" style={{ width: "18rem" }}>
-      <img src={person.image} className="card-img-top img-fluid" alt={ person.name } />
-      <div className="card-body">
-        <h5 className="card-title">{person.name}</h5>
-        <p className="card-text">{person.description}</p>
-        <a href="#" className="btn btn-primary mt-4">Go somewhere</a>
-      </div>
-      
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
+        <p className="text-gray-600">{place}</p>
+        <p className="text-gray-600">{ruleOf}</p>
+        <button onClick={onRemoveCharacter} className="mt-2 px-4 py-2 bg-red-500 text-white rounded">
+          Rimuovi
+        </button>      </div>
     </div>
   );
 }
-
-//validazione props
-Card.propTypes = {
-    person: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-    }).isRequired,
-  };
-
-
 
 export default Card;

@@ -1,73 +1,48 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/image/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
 import Card from './components/Card'
-import characters from './assets/characters.json'
+import CardForm from './components/CardForm'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [message, setMessage] = useState("");
-  const [people, setPeople] = useState([]);
+const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {
-    setPeople(characters);
-  }, []);
+const addCharachter = (character) => {
+  setCharacters([...characters, character]);
+};
 
-  return (
-    <>
-    <div className="container">
-      <div className="row">
-        {people.map(person => (
-          <div className="col-md-4" key={person.id}>
-            <Card person={person} />
-          </div>
-        ))}
-      </div>
+const removeCharacter = (index) => {
+  setCharacters((prevCharacters) => {
+    const updatedCharacters = prevCharacters.filter((_, i) => i !== index);
+    console.log("Nuova lista:", updatedCharacters); // 🔎 Debug
+    return updatedCharacters;
+  });
+};
+
+
+return (
+  <>
+  <div className="container vh-100 d-flex justify-content-center align-items-center">
+    <div className="App">
+      <h1>Game of Thrones</h1>
     </div>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="cardCount">
-      <div>
-      <button
-        onClick={() => {
-          setCount((prevCount) => {
-            const newCount = prevCount + 1;
+  </div>
 
-            if (newCount === 3) {
-              setMessage("Ciao da classe");
-            } else {
-              setMessage("Non è valido caro");
-            }
+  <CardForm addCharacter={addCharachter}></CardForm>
+  <div className='grid grid-cols-4 gap-5'>
+    {characters.map((character, index) => (
+      <Card key={character.id} 
+      name={character.name}
+      place={character.place}
+      ruleOf={character.ruleOf}
+      imageUrl={character.imageUrl}
+      onRemoveCharacter={() => removeCharacter(index)}>
+      index={index}
+    </Card>
+    ))}
+  </div>
+  </>
+);
 
-            return newCount;
-          });
-        }}
-      >
-        count is {count}
-      </button>
-
-      <p>{message}</p>
-    </div>
-
-
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Card></Card>
-    </>
-  )
 }
 
 export default App
