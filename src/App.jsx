@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './components/Card'
 import CardForm from './components/CardForm'
 
 function App() {
 const [characters, setCharacters] = useState([]);
+const [data, setData] = useState([]);
 
 const addCharachter = (character) => {
   setCharacters([...characters, character]);
@@ -18,17 +19,23 @@ const removeCharacter = (index) => {
   });
 };
 
+useEffect(() => {
+  fetch('https://jsonplaceholder.typicode.com/posts/1').then((response) => response.json()).then((data) => {
+    setData(data);
+    console.log(data);
+  });
+}, [characters]);
 
 return (
   <>
-  <div className="container vh-100 d-flex justify-content-center align-items-center">
+  <div className="container mb-5 d-flex justify-content-center">
     <div className="App">
       <h1>Game of Thrones</h1>
     </div>
   </div>
 
   <CardForm addCharacter={addCharachter}></CardForm>
-  <div className='grid grid-cols-4 gap-5'>
+  <div className='grid grid-cols-4 gap-5 mt-5'>
     {characters.map((character, index) => (
       <Card key={character.id} 
       name={character.name}

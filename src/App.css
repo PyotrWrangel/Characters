@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 }
+
+/* input {
+  color: black !important;
+} */
+
+body {
+  background-color: #1c1f25;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.submitButton {
+  cursor: not-allowed;
+  pointer-events: none; /* Disabilita il click */
+  opacity: 0.6; /* Effetto visivo di disabilitazione */
+}
+
+

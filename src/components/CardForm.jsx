@@ -13,6 +13,7 @@ function CardForm ({ addCharacter }) {
     const handleInputChange = (e) => {
         const {name, value} = e.target;
         const inputValue = value;
+        const setValue = e.target.value
         setFormData({
             ...formData,
             [name]: inputValue,
@@ -27,37 +28,46 @@ function CardForm ({ addCharacter }) {
             ruleOf: formData.ruleOf,
             imageUrl: formData.imageUrl,
         };
+        setFormData({
+            name: "",
+            descrition: "",
+            ruleOf: "",
+            imageUrl: "",
+            place: "",
+        })
         addCharacter(character);
     }
 
+    const isFormValid = formData.name.trim() !== "" && formData.place.trim() !== "" && formData.ruleOf.trim() !== "";
+
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-80 mb-10">
-            <div className="flex flex-col">
+        <form onSubmit={handleSubmit} className="container flex flex-col gap-3 w-80 mb-10 bg-gray-800 p-5 rounded-md mt-5 ">
+            <div className="flex flex-col text-white">
                 <label>
-                    <span>Nome:</span>
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange}/>
+                    <span>Nome: </span>
+                    <input type="text"  className="bg-gray-500" name="name" value={formData.name} onChange={handleInputChange}/>
                 </label>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col text-white">
                 <label>
-                    <span>Luogo</span>
-                    <input type="text" name="place" value={formData.place} onChange={handleInputChange}/>
+                    <span>Luogo: </span>
+                    <input type="text" className="bg-gray-500" name="place" value={formData.place} onChange={handleInputChange}/>
                 </label>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col text-white">
                 <label>
-                    <span>Regnante:</span>
-                    <input type="text" name="ruleOf" value={formData.ruleOf} onChange={handleInputChange}/>
+                    <span>Regnante: </span>
+                    <input type="text" className="bg-gray-500" name="ruleOf" value={formData.ruleOf} onChange={handleInputChange}/>
                 </label>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col text-white bg-gray-800">
                 <label>
-                    <span>Immagine:</span>
-                    <input type="text" name="imageUrl" value={formData.imageUrl} onChange={handleInputChange}/>
+                    <span>Immagine: </span>
+                    <input type="text" className="bg-gray-500" name="imageUrl" value={formData.imageUrl} onChange={handleInputChange}/>
                 </label>
             </div>
-            <div className="flex flex-col">
-                <button type="submit" className="bg-blue-500  p-2 rounded-md">Aggiungi</button>
+            <div className="flex flex-col text-white ">
+                <button type="submit"  className="bg-black p-2 rounded-md mt-5 mb-0" disabled={!isFormValid}>Aggiungi</button>
             </div>
            </form> 
     )

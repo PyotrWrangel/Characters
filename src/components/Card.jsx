@@ -1,8 +1,8 @@
 // eslint-disable-next-line react/prop-types
 function Card({ name, place, ruleOf, imageUrl, onRemoveCharacter }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
+    <div className="container p-0 bg-white shadow-lg rounded-lg overflow-hidden">
+      <img src={imageUrl} alt="name" className="w-full h-48 object-cover" />
       <div className="p-4">
         <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
         <p className="text-gray-600">{place}</p>
