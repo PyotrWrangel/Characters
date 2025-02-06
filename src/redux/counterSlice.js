@@ -15,9 +15,12 @@ export const counterSlice = createSlice({
         reset: (state) => {
             state.value = 0
         },
+        fallenRomanEmpire: (state) => {
+            state.value = 476
     },
+}
 });
 
-export const { increment, decrement, reset } = counterSlice.actions;
+export const { increment, decrement, reset, fallenRomanEmpire } = counterSlice.actions;
 
 export const counterReducer = counterSlice.reducer;
