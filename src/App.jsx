@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './components/Card'
 import CardForm from './components/CardForm'
+import ExampleCounter from './components/exampleCounter'
+import ExampleList from './components/exampleList'
 
 function App() {
 const [characters, setCharacters] = useState([]);
+// eslint-disable-next-line no-unused-vars
 const [data, setData] = useState([]);
 
 const addCharachter = (character) => {
@@ -28,6 +31,8 @@ useEffect(() => {
 
 return (
   <>
+      <ExampleCounter></ExampleCounter>
+      <ExampleList></ExampleList>
   <div className="container mb-5 d-flex justify-content-center">
     <div className="App">
       <h1>Game of Thrones</h1>
