@@ -60,4 +60,6 @@ body {
   opacity: 0.6; /* Effetto visivo di disabilitazione */
 }
 
-
+input {
+  background-color: rgb(87, 86, 86) !important;
+}
