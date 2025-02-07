@@ -7,8 +7,13 @@ export const listSlice = createSlice({
         add: (state, action) => {
             state.value.push(action.payload);
         },
-        toggle: (state) => {
-            state.value[0] = state.value[0] + " (completato)";
+        toggle: (state, action) => {
+            const index = action.payload;
+            if (state.value[index]) {
+                state.value[index] = state.value[index].includes("(completato)")
+                    ? state.value[index].replace(" (completato)", "")
+                    : state.value[index] + " (completato)";
+            }
         },
         remove: (state) => {
             state.value.pop();
