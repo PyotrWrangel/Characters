@@ -10,7 +10,7 @@ function ExampleCounter() {
             <p className="mb-3">Conteggio: {count} </p>
             <button className="bg-black p-2 rounded-md mb-0" onClick={() => dispatch(increment())}>Incrementa</button>
             <button className="bg-black ml-4 mr-4 p-2 rounded-md mb-0" onClick={() => dispatch(decrement())}>Decrementa</button>
-            <button className="bg-black p-2 rounded-md mb-0" onClick={() => dispatch(reset())}>Reset</button>
+            <button className="bg-black mr-4 p-2 rounded-md mb-0" onClick={() => dispatch(reset())}>Reset</button>
             <button className="bg-black p-2 rounded-md mb-0" onClick={() => dispatch(fallenRomanEmpire())}>Caduta dell Impero Romano</button>
         </div>
     );
